@@ -1,0 +1,61 @@
+
+<div class="container">
+    <div ng-include=" 'tpl/header.html' "></div>
+    <div class="main">
+        <h2>主菜单页</h2>
+        <hr/>
+
+        <form>
+            <div class="form-group has-feedback">
+                <label class="sr-only" for="kw">搜索关键字</label>
+                <input class="form-control" ng-model="kw" type="search" id="kw" placeholder="请输入您想要的菜品名称或原料">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+        </form>
+        <div class="list-group">
+            <a class="list-group-item" ng-repeat="d in dishList" href="#/detail/{{d.did}}">
+                <div class="media">
+                    <div class="media-left">
+                        <img ng-src="img/{{d.img_sm}}" alt=""/>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-title">{{d.name}}</h3>
+                        <p>原料：{{d.material}}</p>
+                        <p>价格：{{d.price}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+
+
+        <button ng-show="hasMoreData" class="btn bg-success btn-block" ng-click="loadMore()">加载更多</button>
+        <div ng-hide="hasMoreData" class="alert alert-danger">
+            <span class="glyphicon glyphicon-alert">
+                已经没有更多数据可供加载了！
+            </span>
+        </div>
+    </div>
+    <!--<div class="list-group">-->
+        <!--<a ng-repeat="d in dishList" class="list-group-item" href="#/detail">-->
+            <!--<div class="media">-->
+                <!--<div class="media-left">-->
+                    <!--<img ng-src="{{d.img}}" alt=""/>-->
+                <!--</div>-->
+                <!--<div class="media-body">-->
+                    <!--<h3>菜品名称:{{d.dname}} </h3>-->
+                    <!--<p>原料:{{d.material}} </p>-->
+                    <!--<p>价格: ￥{{d.price}}</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</a>-->
+    <!--</div>-->
+    <!--<a ng-click="loadMore()" class="btn btn-success btn-block">加载更多</a>-->
+    <br/><br/><br/><br/>
+    <div ng-include=" 'tpl/footer.html' "></div>
+</div>
+
+
+
+

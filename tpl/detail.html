@@ -1,0 +1,34 @@
+<div ng-include=" 'tpl/header.html' "></div>
+
+
+<div class="detail container">
+    <ol class="breadcrumb">
+        <li>首页</li>
+        <li class="active">详情</li>
+    </ol>
+
+    <h3>{{dish.name}}</h3>
+    <img ng-src="img/{{dish.img_lg}}" class="img-responsive"/>
+    <p><b>主要原料:</b>  {{dish.material}}</p>
+    <p>{{dish.detail}}</p>
+    <p class="alert-danger">￥{{dish.price}}</p>
+
+    <!--{{dish}}-->
+
+    <hr/>
+    <a class="btn btn-success" href="#/order/{{dish.did}}">我要下单</a>
+    <a class="btn btn-warning" ng-click="jump('/order/'+dish.did)">我要下单</a>
+    <!--<a class="btn btn-warning" href="#/main">我再看看</a>-->
+</div>
+
+<!--<div class="container">-->
+    <!--<ol class="breadcrumb">-->
+        <!--<li>首页</li>-->
+        <!--<li class="active">详情</li>-->
+    <!--</ol>-->
+    <!--<h3>酸辣开胃虾</h3>-->
+    <!--<img src="img/p0281-l.jpg" alt="" class="img-responsive"/>-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consequatur corporis dicta dolore dolorem hic, id illo in laborum maxime minima neque nihil odit optio perspiciatis, qui repellendus sequi soluta.</p>-->
+<!--</div>-->
+<br/><br/><br/><br/>
+<div ng-include=" 'tpl/footer.html' "></div>
